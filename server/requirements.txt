@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-multipart
+torch
+torchvision
+numpy
+pillow
+
+# dev / test only
+pytest

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Run · Dataset Cleaning — MProbe</title>
+  <link rel="stylesheet" href="run.css">
+</head>
+<body>
+  <div class="wrap">
+    <a class="back-link" href="../marketplace.html">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg> Back to marketplace
+    </a>
+    <div id="app"></div>
+  </div>
+
+  <!-- ============================================================
+       👋 COLLEAGUE: this <script> is the whole page's content.
+       Safe to edit: title, intro, and the cleanStats numbers below.
+       The shared look is in run.css, the shared behaviour is in run.js.
+       ============================================================ -->
+  <script>
+    window.MODEL = {
+      kind:    "cleaning",
+      title:   "Dataset Cleaning & Poison Detection",
+      slug:    "dataset-cleaning",
+      dataset: "Image classification (v1)",
+      arch:    "SmallCifarClassifier feature extractor",
+      intro:   "Upload a labeled image dataset (.zip, one folder per class) or load a sample. MProbe runs it through two stages — a known-trigger signature match (auto-removed) then a feature-space anomaly check on whatever the first stage didn't flag (flagged for human review, not auto-removed) — and returns a cleaned set plus a report.",
+      // This page talks to a real backend (server/main.py) instead of
+      // simulating results. Point `backend` at wherever you're running it:
+      //   uvicorn server.main:app --reload --port 8001
+      live:    true,
+      backend: "http://127.0.0.1:8001"
+    };
+  </script>
+  <script src="run.js"></script>
+</body>
+</html>
